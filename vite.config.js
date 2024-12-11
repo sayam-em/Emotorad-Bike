@@ -10,7 +10,11 @@ export default defineConfig({
     },
   },
   server: {
-    historyApiFallback: true,
+    port: 5173,
+    strictPort: true,
   },
-  base: '/',
+  build: {
+    outDir: 'dist',
+    sourcemap: true
+  }
 });
