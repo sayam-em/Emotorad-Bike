@@ -1,10 +1,16 @@
 // src/pages/bikes/HyperLite.jsx
-import { useState, useRef } from 'react';
-import { motion } from 'framer-motion';
-import BikeSpecs from '../../components/bikes/BikeSpecs';
-import BikeGallery from '../../components/bikes/BikeGallery';
-import FeatureList from '../../components/features/FeatureList';
-import Button from '../../components/common/Button';
+import { useState, useRef } from "react";
+import { motion } from "framer-motion";
+import BikeSpecs from "../../components/bikes/BikeSpecs";
+import BikeGallery from "../../components/bikes/BikeGallery";
+import Button from "../../components/common/Button";
+
+import {
+  BoltIcon,
+  CpuChipIcon,
+  MapIcon,
+  SignalIcon,
+} from "@heroicons/react/24/outline";
 
 const specs = {
   battery: {
@@ -13,74 +19,79 @@ const specs = {
     technology: "Li-ion LFP (32140, Cylindrical)",
     removable: true,
     cells: "32 cells per battery",
-    lifecycle: "2500 cycles up to 70% DOD"
+    lifecycle: "2500 cycles up to 70% DOD",
   },
   performance: {
     range: "140/110/80 kms (IDC/City/Highway)",
     topSpeed: "45 kmph",
     motor: "1.75/1.25 kW (Peak/Rated) BLDC Hub Motor",
-    voltage: "48V"
+    voltage: "48V",
   },
   charging: {
     time: "4-5 hours",
     type: "900W Smart Charger",
-    rating: "20A (Peak Charging)"
+    rating: "20A (Peak Charging)",
   },
   features: {
     brakes: "Non CBS (DISC TYPE) - 220mm",
     suspension: {
       front: "Telescopic, 110mm stroke, Ø30 mm",
-      rear: "Spring coil, 60mm stroke"
+      rear: "Spring coil, 60mm stroke",
     },
     tires: {
       front: "2.75 x 17",
-      rear: "2.75 x 17"
-    }
-  }
+      rear: "2.75 x 17",
+    },
+  },
 };
 
 const features = [
   {
     title: "Dual LFP Battery System",
-    description: "Two removable 1.5 kWh LFP batteries with side sheet metal panel design for easy access"
+    description:
+      "Two removable 1.5 kWh LFP batteries with side sheet metal panel design for easy access",
   },
   {
     title: "Advanced 32140 Cells",
-    description: "High-performance 15Ah, 3.2V cylindrical cells with 2500+ cycle life"
+    description:
+      "High-performance 15Ah, 3.2V cylindrical cells with 2500+ cycle life",
   },
   {
     title: "Smart BMS",
-    description: "UL version BMS with dual thermistor monitoring for optimal battery health"
+    description:
+      "UL version BMS with dual thermistor monitoring for optimal battery health",
   },
   {
     title: "Hub Motor Technology",
-    description: "1.75kW peak power BLDC hub motor with 270mm shaft length"
+    description: "1.75kW peak power BLDC hub motor with 270mm shaft length",
   },
   {
     title: "Range Excellence",
-    description: "Up to 140km IDC range with dual batteries for extended journeys"
+    description:
+      "Up to 140km IDC range with dual batteries for extended journeys",
   },
   {
     title: "Performance Braking",
-    description: "220mm disc brakes with 2-piston system for reliable stopping power"
-  }
+    description:
+      "220mm disc brakes with 2-piston system for reliable stopping power",
+  },
 ];
 
 const gallery = [
   "/images/bikes/hyperlite/side.jpg",
   "/images/bikes/hyperlite/front.jpg",
   "/images/bikes/hyperlite/battery.jpg",
-  "/images/bikes/hyperlite/display.jpg"
+  "/images/bikes/hyperlite/display.jpg",
 ];
 
 export default function HyperLite() {
-  const [activeSection, setActiveSection] = useState('overview');
+  const [activeSection, setActiveSection] = useState("overview");
   const overviewRef = useRef(null);
   const specsRef = useRef(null);
   const featuresRef = useRef(null);
 
   const handleScroll = (ref) => {
-    ref.current?.scrollIntoView({ behavior: 'smooth' });
+    ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -152,20 +163,20 @@ export default function HyperLite() {
       <nav className="sticky top-16 z-20 bg-white shadow">
         <div className="container mx-auto px-4">
           <div className="flex space-x-8">
-            {['overview', 'specifications', 'features'].map((section) => (
+            {["overview", "specifications", "features"].map((section) => (
               <button
                 key={section}
                 className={`py-4 px-2 border-b-2 ${
                   activeSection === section
-                    ? 'border-blue-600 text-blue-600'
-                    : 'border-transparent text-gray-600'
+                    ? "border-blue-600 text-blue-600"
+                    : "border-transparent text-gray-600"
                 }`}
                 onClick={() => {
                   setActiveSection(section);
                   handleScroll(
-                    section === 'overview'
+                    section === "overview"
                       ? overviewRef
-                      : section === 'specifications'
+                      : section === "specifications"
                       ? specsRef
                       : featuresRef
                   );
@@ -185,15 +196,15 @@ export default function HyperLite() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-lg text-gray-600 mb-6">
-                The HyperLite represents the pinnacle of electric bike innovation,
-                featuring our groundbreaking dual battery system. With two removable
-                1.5 kWh batteries, you can enjoy extended range and the convenience
-                of hot-swappable power.
+                The HyperLite represents the pinnacle of electric bike
+                innovation, featuring our groundbreaking dual battery system.
+                With two removable 1.5 kWh batteries, you can enjoy extended
+                range and the convenience of hot-swappable power.
               </p>
               <p className="text-lg text-gray-600 mb-6">
                 Each battery is engineered with advanced Li-ion NMC technology,
-                providing reliable performance and longer lifespan. The smart BMS
-                ensures optimal charging and battery health monitoring.
+                providing reliable performance and longer lifespan. The smart
+                BMS ensures optimal charging and battery health monitoring.
               </p>
             </div>
             <BikeGallery images={gallery} />
@@ -231,6 +242,56 @@ export default function HyperLite() {
               >
                 <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Premium Features Section */}
+      <section className="py-20 bg-gray-900 text-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold mb-12 text-center">
+            Premium Features
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Hot-Swappable Design",
+                description:
+                  "Quick battery swap capability with side sheet metal panel design",
+                icon: <BoltIcon className="w-8 h-8 text-blue-400" />,
+              },
+              {
+                title: "Dual BMS System",
+                description:
+                  "Independent battery management with UL version thermistor monitoring",
+                icon: <CpuChipIcon className="w-8 h-8 text-blue-400" />,
+              },
+              {
+                title: "Extended Range",
+                description: "140km IDC range with dual battery configuration",
+                icon: <MapIcon className="w-8 h-8 text-blue-400" />,
+              },
+              {
+                title: "Smart Integration",
+                description:
+                  "Advanced connectivity with real-time performance monitoring",
+                icon: <SignalIcon className="w-8 h-8 text-blue-400" />,
+              },
+            ].map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="bg-blue-600 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                <p className="text-gray-300">{feature.description}</p>
               </motion.div>
             ))}
           </div>
