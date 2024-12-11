@@ -9,27 +9,32 @@ import Button from '../../components/common/Button';
 const specs = {
   battery: {
     type: "Fixed Pack",
-    capacity: "5.1 kWh",
-    technology: "Li-ion NMC",
-    lifecycle: "2000+ cycles",
-    chargingTime: "6-7 hours",
-    estimation: "Up to 160km per charge"
+    capacity: "6.10 kWh",
+    technology: "Li-ion LFP (32140, Cylindrical)",
+    cells: "128 cells",
+    lifecycle: "2500 cycles up to 70% DOD"
   },
   performance: {
-    range: "160 km",
-    topSpeed: "25 kmph",
-    acceleration: "0-15 kmph in 3s",
-    motor: "250W BLDC Hub Motor",
-    torque: "18 Nm",
-    modes: "Eco, City, Sport, Turbo"
+    range: "240/200/120 kms (IDC/City/Highway)",
+    topSpeed: "80 kmph (90 kmph in Turbo)",
+    motor: "5.0/3.5 kW (Peak/Rated) BLDC Hub Motor",
+    voltage: "48V"
+  },
+  charging: {
+    time: "DC Fast Charging Supported",
+    type: "900W Smart Charger",
+    rating: "120A (Peak Charging)"
   },
   features: {
-    display: "7.5-inch TFT Display",
-    connectivity: "Bluetooth 5.0",
-    app: "Smart Connect App",
-    lights: "Advanced LED with DRL",
-    brakes: "Dual Disc Brakes with ABS",
-    suspension: "Adjustable Front & Rear"
+    brakes: "CBS (DISC TYPE) - 300mm front, 220mm rear",
+    suspension: {
+      front: "Telescopic, 100mm stroke, Ø41 mm",
+      rear: "Spring coil, 30mm stroke"
+    },
+    tires: {
+      front: "80/90 x 17",
+      rear: "100/80 x 17"
+    }
   }
 };
 
@@ -52,28 +57,28 @@ export default function Lite() {
 
   const features = [
     {
-      title: "High Capacity Battery",
-      description: "5.1 kWh NMC battery for maximum range and performance"
+      title: "Massive Battery Capacity",
+      description: "6.10 kWh LFP battery pack with 128-cell configuration"
     },
     {
-      title: "Enhanced Connectivity",
-      description: "Advanced app features with real-time diagnostics"
+      title: "DC Fast Charging",
+      description: "Supports rapid charging with 120A peak charging capability"
     },
     {
-      title: "Superior Comfort",
-      description: "Dual suspension system for smooth rides"
+      title: "Premium Braking System",
+      description: "CBS equipped with 300mm front and 220mm rear disc brakes"
     },
     {
-      title: "Four Riding Modes",
-      description: "Including Turbo mode for maximum performance"
+      title: "High-Performance Motor",
+      description: "5.0kW peak power motor with 80-90 kmph speed capability"
     },
     {
-      title: "Advanced Safety",
-      description: "Dual disc brakes with ABS and enhanced lighting"
+      title: "Advanced Suspension",
+      description: "Ø41mm telescopic fork with premium spring coil rear suspension"
     },
     {
-      title: "Premium Display",
-      description: "Large 7.5-inch TFT display with advanced UI"
+      title: "Extended Range",
+      description: "Up to 240km IDC range with optimized power delivery"
     }
   ];
 

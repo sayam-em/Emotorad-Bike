@@ -9,27 +9,32 @@ import Button from '../../components/common/Button';
 const specs = {
   battery: {
     type: "Fixed Pack",
-    capacity: "4.6 kWh",
-    technology: "Li-ion LFP",
-    lifecycle: "2000+ cycles",
-    chargingTime: "5-6 hours",
-    estimation: "Up to 140km per charge"
+    capacity: "1.5 kWh × 2",
+    technology: "Li-ion LFP (32140, Cylindrical)",
+    cells: "32 cells per battery",
+    lifecycle: "2500 cycles up to 70% DOD"
   },
   performance: {
-    range: "140 km",
-    topSpeed: "25 kmph",
-    acceleration: "0-15 kmph in 3.2s",
-    motor: "250W BLDC Hub Motor",
-    torque: "16 Nm",
-    modes: "Eco, City, Sport"
+    range: "125/100/70 kms (IDC/City/Highway)",
+    topSpeed: "50 kmph (60 kmph in Turbo)",
+    motor: "2.2/1.5 kW (Peak/Rated) BLDC Hub Motor",
+    voltage: "48V"
+  },
+  charging: {
+    time: "4-5 hours",
+    type: "900W Smart Charger",
+    rating: "20A (Peak Charging)"
   },
   features: {
-    display: "7-inch TFT Display",
-    connectivity: "Bluetooth 5.0",
-    app: "Smart Connect App",
-    lights: "LED with DRL",
-    brakes: "Disc Brakes with Regeneration",
-    suspension: "Adjustable Front Fork"
+    brakes: "Non CBS (DISC TYPE) - 220mm",
+    suspension: {
+      front: "Telescopic, 110mm stroke, Ø30 mm",
+      rear: "Spring coil, 60mm stroke"
+    },
+    tires: {
+      front: "2.75 x 17",
+      rear: "3.0 x 17"
+    }
   }
 };
 
@@ -52,28 +57,28 @@ export default function UltraLite() {
 
   const features = [
     {
-      title: "Advanced LFP Battery",
-      description: "Long-life lithium iron phosphate battery with 2000+ cycles"
+      title: "High-Performance LFP",
+      description: "Dual 1.5 kWh LFP battery system with 32140 cylindrical cells"
     },
     {
-      title: "Smart Connect",
-      description: "Bluetooth connectivity with dedicated mobile app"
+      title: "Enhanced Speed Mode",
+      description: "50 kmph standard speed with 60 kmph turbo mode capability"
     },
     {
-      title: "Regenerative Braking",
-      description: "Energy recovery system for extended range"
+      title: "Advanced Motor System",
+      description: "2.2kW peak power BLDC hub motor with optimized efficiency"
     },
     {
-      title: "Multi-Mode Riding",
-      description: "Choose between Eco, City, and Sport modes"
+      title: "Multi-Terrain Tires",
+      description: "17-inch wheels with 3.0 rear tire for better stability"
     },
     {
-      title: "Premium Display",
-      description: "7-inch TFT display with navigation"
+      title: "Intelligent Power Management",
+      description: "UL version BMS with advanced thermal monitoring"
     },
     {
-      title: "Advanced Safety",
-      description: "Disc brakes with ABS and LED lighting"
+      title: "Superior Suspension",
+      description: "Telescopic front fork with 110mm travel for smooth rides"
     }
   ];
 

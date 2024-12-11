@@ -8,23 +8,63 @@ import Button from '../../components/common/Button';
 
 const specs = {
   battery: {
-    type: "Dual Battery System",
+    type: "Dual Battery System (Side sheet metal panel)",
     capacity: "1.5 kWh × 2",
+    technology: "Li-ion LFP (32140, Cylindrical)",
     removable: true,
-    technology: "Li-ion NMC"
+    cells: "32 cells per battery",
+    lifecycle: "2500 cycles up to 70% DOD"
   },
   performance: {
-    range: "120 km",
-    topSpeed: "25 kmph",
-    acceleration: "0-15 kmph in 3.5s",
-    motor: "250W BLDC Hub Motor"
+    range: "140/110/80 kms (IDC/City/Highway)",
+    topSpeed: "45 kmph",
+    motor: "1.75/1.25 kW (Peak/Rated) BLDC Hub Motor",
+    voltage: "48V"
   },
   charging: {
     time: "4-5 hours",
-    type: "Smart Charger",
-    swappable: true
+    type: "900W Smart Charger",
+    rating: "20A (Peak Charging)"
+  },
+  features: {
+    brakes: "Non CBS (DISC TYPE) - 220mm",
+    suspension: {
+      front: "Telescopic, 110mm stroke, Ø30 mm",
+      rear: "Spring coil, 60mm stroke"
+    },
+    tires: {
+      front: "2.75 x 17",
+      rear: "2.75 x 17"
+    }
   }
 };
+
+const features = [
+  {
+    title: "Dual LFP Battery System",
+    description: "Two removable 1.5 kWh LFP batteries with side sheet metal panel design for easy access"
+  },
+  {
+    title: "Advanced 32140 Cells",
+    description: "High-performance 15Ah, 3.2V cylindrical cells with 2500+ cycle life"
+  },
+  {
+    title: "Smart BMS",
+    description: "UL version BMS with dual thermistor monitoring for optimal battery health"
+  },
+  {
+    title: "Hub Motor Technology",
+    description: "1.75kW peak power BLDC hub motor with 270mm shaft length"
+  },
+  {
+    title: "Range Excellence",
+    description: "Up to 140km IDC range with dual batteries for extended journeys"
+  },
+  {
+    title: "Performance Braking",
+    description: "220mm disc brakes with 2-piston system for reliable stopping power"
+  }
+];
 
 const gallery = [
   "/images/bikes/hyperlite/side.jpg",
@@ -180,7 +220,20 @@ export default function HyperLite() {
       <section ref={featuresRef} className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-12">Features</h2>
-          <FeatureList bikeModel="hyperlite" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white p-8 rounded-lg shadow-lg"
+              >
+                <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
