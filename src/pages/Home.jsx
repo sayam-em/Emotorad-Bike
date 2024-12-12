@@ -8,7 +8,7 @@ const bikes = [
     id: 'hyperlite',
     name: 'HyperLite',
     description: 'Dual Battery System (1.5kwh x 2, removable)',
-    image: '/images/bikes/hyperlite/hero.png',
+    image: '/images/bikes/hyperlite/Side L.png',
     features: [
       'Dual Removable Batteries',
       'Extended Range',
@@ -19,7 +19,7 @@ const bikes = [
     id: 'ultralite',
     name: 'UltraLite',
     description: 'Fixed Pack 4.6kwh',
-    image: '/images/bikes/ultralite/hero.png',
+    image: '/images/bikes/ultralite/image (3).png',
     features: [
       'High Capacity Battery',
       'Enhanced Performance',
@@ -30,7 +30,7 @@ const bikes = [
     id: 'lite',
     name: 'Lite',
     description: 'Fixed Pack 5.1kwh',
-    image: '/images/bikes/lite/hero.png',
+    image: '/images/bikes/lite/Screenshot 2024-11-19 142801.png',
     features: [
       'Maximum Range',
       'Premium Features',
@@ -52,13 +52,13 @@ export default function Home() {
           muted
           className="absolute w-full h-full object-cover"
         >
-          <source src="/videos/hero-background.mp4" type="video/mp4" />
+          <source src="/videos/Untitled design.mp4" type="video/mp4" />
         </video>
         <div className="relative z-10 text-center text-white">
-          <h1 className="text-6xl text-black font-bold mb-6">
+          <h1 className="text-6xl text-white font-bold mb-6">
             The Future of Electric Mobility
           </h1>
-          <p className="text-xl mb-8 text-black">
+          <p className="text-xl mb-8 text-white">
             Experience the power of sustainable transportation
           </p>
           <Link

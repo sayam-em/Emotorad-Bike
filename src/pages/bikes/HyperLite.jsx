@@ -78,10 +78,10 @@ const features = [
 ];
 
 const gallery = [
-  "/images/bikes/hyperlite/side.jpg",
-  "/images/bikes/hyperlite/front.jpg",
-  "/images/bikes/hyperlite/battery.jpg",
-  "/images/bikes/hyperlite/display.jpg",
+  "/images/bikes/hyperlite/Side L.png",
+  "/images/bikes/hyperlite/front.png",
+  "/images/bikes/hyperlite/Front left.png",
+  "/images/bikes/hyperlite/rear left.png",
 ];
 
 export default function HyperLite() {
@@ -105,7 +105,7 @@ export default function HyperLite() {
           className="absolute inset-0"
         >
           <img
-            src="/images/bikes/hyperlite/hero-bg.jpg"
+            src="/images/bikes/hyperlite/Side L.png"
             alt="HyperLite Background"
             className="w-full h-full object-cover opacity-50"
           />
@@ -138,12 +138,12 @@ export default function HyperLite() {
                 <Button variant="primary" size="lg">
                   Book Test Ride
                 </Button>
-                <Button variant="outline" size="lg">
+                <Button variant="outline" className="text-white" size="lg">
                   Download Brochure
                 </Button>
               </motion.div>
             </div>
-            <motion.div
+            {/* <motion.div
               initial={{ x: 50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -154,7 +154,7 @@ export default function HyperLite() {
                 alt="HyperLite"
                 className="w-full h-auto"
               />
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </section>

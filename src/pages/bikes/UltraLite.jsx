@@ -45,10 +45,10 @@ const specs = {
 };
 
 const gallery = [
-  "/images/bikes/ultralite/side.jpg",
-  "/images/bikes/ultralite/front.jpg",
-  "/images/bikes/ultralite/rear.jpg",
-  "/images/bikes/ultralite/display.jpg",
+  "/images/bikes/ultralite/image (3).png",
+  "/images/bikes/ultralite/UL_rfrsh1.AutoSave_Front_2024-11-19-14-03-07.png",
+  "/images/bikes/ultralite/UL_rfrsh1.AutoSave_Back_2024-11-19-14-03-11.png",
+  "/images/bikes/ultralite/UL_rfrsh1.AutoSave.13-46_2024-11-19-13-56-46.png",
 ];
 
 export default function UltraLite() {
@@ -100,7 +100,7 @@ export default function UltraLite() {
           className="absolute inset-0"
         >
           <img
-            src="/images/bikes/ultralite/hero-bg.jpg"
+            src="/images/bikes/ultralite/image (3).png"
             alt="UltraLite Background"
             className="w-full h-full object-cover opacity-50"
           />
@@ -133,12 +133,12 @@ export default function UltraLite() {
                 <Button variant="primary" size="lg">
                   Book Test Ride
                 </Button>
-                <Button variant="outline" size="lg">
+                <Button variant="outline" className="text-white" size="lg">
                   Download Brochure
                 </Button>
               </motion.div>
             </div>
-            <motion.div
+            {/* <motion.div
               initial={{ x: 50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -149,7 +149,7 @@ export default function UltraLite() {
                 alt="UltraLite"
                 className="w-full h-auto"
               />
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </section>

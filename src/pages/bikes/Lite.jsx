@@ -45,10 +45,10 @@ const specs = {
 };
 
 const gallery = [
-  "/images/bikes/lite/side.jpg",
-  "/images/bikes/lite/front.jpg",
-  "/images/bikes/lite/rear.jpg",
-  "/images/bikes/lite/display.jpg",
+  "/images/bikes/lite/Screenshot 2024-11-19 142801.png",
+  "/images/bikes/lite/Screenshot 2024-11-19 142835.png",
+  "/images/bikes/lite/Screenshot 2024-11-19 142820.png",
+  "/images/bikes/lite/Screenshot 2024-11-19 142851.png",
 ];
 
 export default function Lite() {
@@ -100,7 +100,7 @@ export default function Lite() {
           className="absolute inset-0"
         >
           <img
-            src="/images/bikes/lite/hero-bg.jpg"
+            src="/images/bikes/lite/Screenshot 2024-11-19 142801.png"
             alt="Lite Background"
             className="w-full h-full object-cover opacity-50"
           />
@@ -134,12 +134,12 @@ export default function Lite() {
                 <Button variant="primary" size="lg">
                   Book Test Ride
                 </Button>
-                <Button variant="outline" size="lg">
+                <Button variant="outline" className="text-white" size="lg">
                   Download Brochure
                 </Button>
               </motion.div>
             </div>
-            <motion.div
+            {/* <motion.div
               initial={{ x: 50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -150,7 +150,7 @@ export default function Lite() {
                 alt="Lite"
                 className="w-full h-auto"
               />
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </section>
