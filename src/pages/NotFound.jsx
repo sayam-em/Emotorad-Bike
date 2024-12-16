@@ -1,8 +1,20 @@
 // src/pages/NotFound.jsx
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '../components/common/Button';
+import { useEffect } from 'react';
 
 export default function NotFound() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Redirect to home page after a brief delay
+    const timeout = setTimeout(() => {
+      navigate('/', { replace: true });
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, [navigate]);
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="text-center">
