@@ -8,49 +8,48 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check for existing session
-    const session = localStorage.getItem('emSession');
-    if (session) {
-      setUser(JSON.parse(session));
+    const user = localStorage.getItem('emotoradUser');
+    if (user) {
+      setUser(JSON.parse(user));
     }
     setLoading(false);
   }, []);
 
   const login = async (email, password) => {
-    try {
-      // In a real app, this would be an API call
-      if (email.endsWith('@emotorad.com')) {
-        const userData = {
-          email,
-          name: email.split('@')[0]
-        };
-        localStorage.setItem('emSession', JSON.stringify(userData));
-        setUser(userData);
-        return true;
-      }
-      throw new Error('Invalid email domain');
-    } catch (error) {
-      console.error('Login error:', error);
-      throw error;
+    if (!email.endsWith('@emotorad.com')) {
+      throw new Error('Try Again');
     }
+
+    if (password !== '3@motorad') {
+      throw new Error('Invalid credentials');
+    }
+
+    const userData = {
+      email,
+      name: email.split('@')[0],
+      isAuthenticated: true
+    };
+
+    localStorage.setItem('emotoradUser', JSON.stringify(userData));
+    setUser(userData);
   };
 
   const logout = () => {
-    localStorage.removeItem('emSession');
+    localStorage.removeItem('emotoradUser');
     setUser(null);
   };
 
-  const value = {
-    user,
-    login,
-    logout,
-    loading
-  };
-
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={{ user, login, logout, loading }}>
+      {children}
+    </AuthContext.Provider>
+  );
 }
 
-export function useAuth() {
-  return useContext(AuthContext);
-}
-
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuth must be used within AuthProvider');
+  }
+  return context;
+};

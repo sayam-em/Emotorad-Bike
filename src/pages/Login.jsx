@@ -15,11 +15,13 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
+
     try {
       await login(email, password);
       navigate(from, { replace: true });
     } catch (err) {
-      setError('Invalid credentials or unauthorized domain');
+      setError(err.message);
     }
   };
 
